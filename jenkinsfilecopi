@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code...'
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+                // Example: sh 'make build' or your build commands
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Example: sh 'make test' or your test commands
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Example: sh 'deploy_script.sh' or your deploy commands
+            }
+        }
+        stage('Cleanup') {
+            steps {
+                echo 'Cleaning up after build...'
+                // Example: sh 'make clean' or your cleanup commands
+            }
+        }
+    }
+}
